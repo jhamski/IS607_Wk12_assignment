@@ -18,3 +18,15 @@ call <-mongo.get.database.collections(mongo, db)
 mongo.count(mongo, call)
 
 mongo.find.one(mongo, call)
+
+countries <- mongo.distinct(mongo, call, "countryname")
+country.code <- mongo.distinct(mongo, call, "countrycode")
+
+
+library(map) 
+library(mapdata)
+
+# Map the countries that are listed as having projects in the database
+map("world") + map('world', country.code, fill=TRUE, col = "red", add=TRUE) 
+
+
