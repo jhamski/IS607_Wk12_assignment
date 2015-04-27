@@ -1,0 +1,13 @@
+In window #1
+
+cd [working directory]
+mongo worldbank
+
+
+In window #2
+cd [working directory]
+mongoimport --db worldbank --collection projects --file world_bank.json
+
+[returns]
+2015-04-26T22:08:22.155-0400	connected to: localhost
+2015-04-26T22:08:24.453-0400	imported 500 documents
